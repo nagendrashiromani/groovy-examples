@@ -1,3 +1,5 @@
+node{
+ stage("script"){
 def sites = ["eenadu-nonworking":"https://www.eenadu.ne/","eenadu":"https://www.eenadu.net/","http-200":"https://httpstat.us/200","http-500":"https://httpstat.us/500"]
 for(site in sites){
  try{
@@ -9,5 +11,7 @@ for(site in sites){
    }
   }catch(Exception e){
   println("cannot connect :"+site.key) 
+ }
+}
  }
 }
